@@ -1,0 +1,17 @@
+{
+  "_comment": "NSIGII peer-to-peer service configuration. Edit before installing.",
+
+  "node_id": "NSIGII-NODE-A",
+
+  "listen_port": 9200,
+
+  "remote_peers": [
+    {
+      "_comment": "Replace with the IP of the other Windows machine on your network.",
+      "host": "192.168.1.100",
+      "port": 9200
+    }
+  ],
+
+  "reconnect_interval": 30
+}
