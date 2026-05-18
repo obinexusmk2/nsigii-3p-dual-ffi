@@ -1,0 +1,87 @@
+(base) PS C:\msys64\home\Nnamdi\projects\nsigii-3p-dual-ffi> notepad.exe .\nsigii_config.json
+(base) PS C:\msys64\home\Nnamdi\projects\nsigii-3p-dual-ffi> ipconfig.exe
+
+Windows IP Configuration
+
+
+Unknown adapter McAfee VPN:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter WiFi:
+
+   Connection-specific DNS Suffix  . : lan
+   Link-local IPv6 Address . . . . . : fe80::9d50:dc09:60c9:fc19%8
+   IPv4 Address. . . . . . . . . . . : 192.168.1.117
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.1.1
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Ethernet adapter vEthernet (WSL (Hyper-V firewall)):
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::d444:9997:d800:87f2%57
+   IPv4 Address. . . . . . . . . . . : 172.23.144.1
+   Subnet Mask . . . . . . . . . . . : 255.255.240.0
+   Default Gateway . . . . . . . . . :
+(base) PS C:\msys64\home\Nnamdi\projects\nsigii-3p-dual-ffi> New-NetFirewallRule -DisplayName "NSIGII TCP 9200" -Direction Inbound -Protocol TCP -LocalPort 9200 -Action Allow
+
+
+Name                          : {57c58217-a663-4aed-9356-e8f21a615e74}
+DisplayName                   : NSIGII TCP 9200
+Description                   :
+DisplayGroup                  :
+Group                         :
+Enabled                       : True
+Profile                       : Any
+Platform                      : {}
+Direction                     : Inbound
+Action                        : Allow
+EdgeTraversalPolicy           : Block
+LooseSourceMapping            : False
+LocalOnlyMapping              : False
+Owner                         :
+PrimaryStatus                 : OK
+Status                        : The rule was parsed successfully from the store. (65536)
+EnforcementStatus             : NotApplicable
+PolicyStoreSource             : PersistentStore
+PolicyStoreSourceType         : Local
+RemoteDynamicKeywordAddresses : {}
+PolicyAppId                   :
+PackageFamilyName             :
+
+
+
+(base) PS C:\msys64\home\Nnamdi\projects\nsigii-3p-dual-ffi> Test-NetConnection 192.168.1.119 -Port 9200
+
+
+ComputerName     : 192.168.1.119
+RemoteAddress    : 192.168.1.119
+RemotePort       : 9200
+InterfaceAlias   : WiFi
+SourceAddress    : 192.168.1.117
+TcpTestSucceeded : True
+
+
+
+(base) PS C:\msys64\home\Nnamdi\projects\nsigii-3p-dual-ffi>
